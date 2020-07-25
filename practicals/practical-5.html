@@ -4,12 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practical-5</title>
+    <title>Image Map</title>
+    <style>
+        body {
+            margin-left: 80px;
+            margin-right: 100px;
+            margin-top: 10px;
+        }
+        
+        .img2 {
+            margin-left: 50px;
+            text-align: center;
+        }
+        
+        body {
+            background-color: blueviolet;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: darkorange;
+            margin-top: 70px;
+            margin-left: 40px;
+        }
+        
+        h3 {
+            text-align: center;
+            color: olive;
+            font-weight: lighter;
+        }
+    </style>
 </head>
 
 <body>
-    <img src="../img/Practical-5.png" style="width: 80%;display:block;margin-left: auto;margin-right: auto;">
+    <div class="img1">
+        <img src="../img/TitleBar.jpg" usemap="#navbar">
+        <map name="navbar">
+            <area shape="rect" coords="10,24,139,95" href="../index.html">
+            <area shape="rect" coords="1,24,396,95" href="../practicals/practical1.html">
+            <area shape="rect" coords="418,24,645,94" href="../practicals/practical2.html">
+            <area shape="rect" coords="664,24,894,94" href="../practicals/practical-3.html">
+            <area shape="rect" coords="922,24,1146,94" href="../practicals/practical-4.html">
+            <area shape="rect" coords="1175,24,1411,94 " href="#">
+        </map>
+    </div>
+    <h2>Introduction to Front-End Technologies</h2>
+    <div class="img2">
+        <img src="../img/Practical-5.jpg" usemap="#webtech">
+        <map name="#webtech">
+            <area shape="rect" coords="21,11,171,163" href="../practicals/HTML.html">
+            <area shape="circle" coords="287,107,117" href="../practicals/CSS.html">
+            <area shape="rect" coords="21,200,168,335" href="../practicals/JS.html">
+            <area shape="poly" coords="288,205,347,224,337,301,289,327,241,300,233,226" href="../practicals/BS.html">
 
+        </map>
+    </div>
+    <h3>Click on any part of logo to know more about these technologies</h3>
 
 
 </body>

@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practical-8</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
         .container {
             background-color: aquamarine;
             position: relative;
             width: 100%;
-            overflow-x: hidden;
         }
         
         ul {
@@ -19,11 +23,14 @@
             list-style: none;
             background-color: grey;
             width: 100%;
-            overflow: hidden;
         }
         
         ul li {
             display: inline-block;
+        }
+        
+        ul li a {
+            display: block;
             text-decoration: none;
             text-align: center;
             color: black;
@@ -105,8 +112,9 @@
         }
         
         #left-side {
-            height: 500px;
-            width: 40%;
+            margin-right: 20px;
+            height: 600px;
+            width: 50%;
             background-color: lightgreen;
             border-radius: 10px;
             font-size: 25px;
@@ -115,6 +123,7 @@
             justify-content: center;
             align-items: center;
             float: left;
+            overflow: hidden;
         }
         
         #right-side {
@@ -122,7 +131,7 @@
         }
         
         #box img {
-            height: 25vh;
+            height: 45vh;
             width: 85%;
             display: flex;
             justify-content: center;
@@ -134,7 +143,7 @@
         
         .box1 {
             position: absolute;
-            top: 1200px;
+            top: 1400px;
             left: 800px;
             font-size: 30px;
             font-weight: bold;
@@ -142,7 +151,7 @@
         
         .box2 {
             position: absolute;
-            top: 1400px;
+            top: 16200px;
             left: 800px;
             font-size: 30px;
             font-weight: bold;
@@ -150,7 +159,7 @@
         
         .box3 {
             position: absolute;
-            top: 1600px;
+            top: 1820px;
             left: 800px;
             font-size: 30px;
             font-weight: bold;
@@ -163,7 +172,7 @@
         
         .technology {
             display: block;
-            width: 200px;
+            width: 23%;
             box-shadow: 3px 3px 3px 3px lightsteelblue;
             text-align: center;
             margin: 15px;
@@ -182,22 +191,23 @@
         }
         
         .technology li {
-            background-color: orange;
-            padding: 2px 3px 2px 3px;
-            border-radius: 6px;
+            background-color: wheat;
+            padding: 3px 4px 3px 4px;
+            border-radius: 7px;
             display: block;
             text-align: center;
             cursor: pointer;
+            height: 20px;
         }
         
         .technology li a {
-            padding: 3px;
+            padding: 7px;
             text-align: center;
             display: block;
             font-weight: bold;
             text-decoration: none;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            color: lightpink;
+            color: darkviolet;
         }
         
         .technology li a:hover {
@@ -209,8 +219,11 @@
         }
         
         .footer {
-            height: 80px;
+            display: flex;
+            justify-content: center;
+            height: 90px;
             width: 100%;
+            margin: 20px;
             position: static;
             background-color: lightgrey;
         }
@@ -219,7 +232,7 @@
             font-style: italic;
             text-align: center;
             list-style: none;
-            margin-top: 15px;
+            margin-top: 20px;
         }
         
         .footer li a {
@@ -247,16 +260,16 @@
             <li><a href="#contact">CONTACT</a></li>
         </ul>
         <div class="b">
-            <img src="../img/b.jpg" />
+            <img src="../img/b.jpg">
             <div class="top-left">Practical-8</div>
         </div>
         <h2>
             <a name="team"></a>Team Members</h2>
         <div class="members">
-            <img src="../img/face1.jpg" ait="" />
-            <img src="../img/face2.jpg" alt="" />
-            <img src="../img/face3.jpg" alt="" />
-            <img src="../img/face4.jpg" alt="" />
+            <img src="../img/face1.jpg" ait="">
+            <img src="../img/face2.jpg" alt="">
+            <img src="../img/face3.jpg" alt="">
+            <img src="../img/face4.jpg" alt="">
         </div>
         <div class="aboutus">
             <h2>
@@ -269,23 +282,24 @@
                         <h1>About Project</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quo amet quisquam animi officia voluptates, ducimus sequi. Eum soluta, quis impedit nam ea accusamus eos praesentium doloribus dolorum suscipit quo fugit iusto ipsum
                             pariatur, dolores cupiditate quam quos sit facilis atque. Laborum rerum voluptas incidunt, nesciunt corrupti accusantium excepturi earum facilis rem esse laboriosam porro, hic error dolorem consectetur nam, quaerat voluptate
-                            reprehenderit. Officia suscipit, laborum laudantium quod at illum sit, facilis ducimus dolores a labore explicabo laboriosam uidem ad, perspiciatis nesciunt architecto porro quae aliquid accusantium praesentium nisi. Excepturi
-                            voluptates quidem a at, commodi rem officiis enim tempore. Rerum.</p>
+                            reprehenderit. Officia suscipit, laborum laudantium quod at illum sit, facilis ducimus dolores a labore explicabo laboriosam uidem ad, perspiciatis nesciunt architecto porro quae aliquid accusantium praesentium nisi</p>
                     </dd>
                 </dl>
             </div>
             <div id="right-side">
                 <div id="box">
-                    <img src="../img/p1.jpg" />
-                    <div class="box1">Project-1</div>
+                    <img src="../img/p1.jpg">
+                    <div class="box1"></div>
                 </div>
                 <div id="box">
-                    <img src="../img/p2.jpeg" />
-                    <div class="box2">Project-2</div>
+                    <img src="../img/p2.jpeg">
+                    <div class="box2"></div>
                 </div>
                 <div id="box">
-                    <img src="../img/p3.jpg" />
-                    <div class="box3">Project-3</div>
+
+                    <div class="box3"></div>
+                    <img src="../img/p3.jpg">
+
                 </div>
             </div>
         </div>
@@ -296,7 +310,7 @@
             <h3>Introduction To HTML</h3>
             <p>HTML stands for Hyper Text Markup Language. It is used to design web pages using markup language. HTML is the combination of Hypertext and Markup language... </p>
             <li>
-                <a href="../practicals/HTML.html"></a>
+                <a href="../practicals/HTML.html">Read More</a>
             </li>
         </div>
         <div class="technology">
@@ -304,7 +318,7 @@
             <h3>Introduction To CSS</h3>
             <p>Cascading Style Sheets, fondly referred to as CSS, is a simply designed language intended to simplify the process of making web pages presentable. CSS allows you to apply styles to web pages...</p>
             <li>
-                <a href="../practicals/Css.html"></a>
+                <a href="../practicals/Css.html">Read More</a>
             </li>
         </div>
         <div class="technology">
@@ -312,7 +326,7 @@
             <h3>Introduction To JavaScript</h3>
             <p>JavaScript is a lightweight, cross-platform and interpreted scripting language. It is well-known for the development of web pages, many non-browser environments also use it. JavaScript can be used for...</p>
             <li>
-                <a href="../practicals/JS.html"></a>
+                <a href="../practicals/JS.html">Read More</a>
             </li>
         </div>
         <div class="technology">
@@ -320,14 +334,14 @@
             <h3>Introduction To Bootstrap</h3>
             <p>Bootstrap is a free and open-source tool collection for creating responsive websites and web applications. It is the most popular HTML, CSS, and JavaScript framework for developing responsive...</p>
             <li>
-                <a href="../practicals/BS.html"></a>
+                <a href="../practicals/BS.html">Read More</a>
             </li>
         </div>
         <h2>
             <a name="contact"></a>Contact</h2>
         <div class="footer">
             <p>
-                <a href=""></a>This isweb page having Fixed Navigation Bar with the given content.</p>
+                <a href=""></a>This is web page having Fixed Navigation Bar with the given content.</p>
             <li>
                 <a href="#">Back To Top</a></li>
         </div>

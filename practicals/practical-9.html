@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <title>Practical-9</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-padding-top: 70px;
+            scroll-behavior: smooth;
+        }
+        
+        .con {
+            width: 100%;
+            background-color: burlywood;
+        }
+        
+        .header {
+            top: 0;
+            width: 100%;
+            height: 11vh;
+            position: sticky;
+            background-color: darkslategray;
+        }
+        
+        .header .m {
+            list-style: none;
+            float: right;
+        }
+        
+        .m li {
+            display: inline-block;
+            line-height: 65px;
+            position: relative;
+        }
+        
+        .m li a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 6px 25px;
+            font-size: 45px;
+            font: bold;
+        }
+        
+        .m li a:hover {
+            color: orange;
+            background-color: peachpuff;
+            height: 11vh;
+        }
+        
+        .show-button {
+            float: right;
+        }
+        
+        .show-button,
+        .hide-button {
+            position: absolute;
+            font-size: 35px;
+            color: lightcyan;
+            padding-right: 15px;
+            display: none;
+            top: 20px;
+            bottom: 0;
+        }
+        
+        #check {
+            visibility: hidden;
+            z-index: -10;
+            position: absolute;
+        }
+        
+        .banner {
+            margin-top: 35px;
+            margin-bottom: 25px;
+            height: 100vh;
+            width: 100%;
+            transition: 1s;
+            display: flex;
+        }
+        
+        .banner img {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            border-radius: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .banner h2 {
+            font-size: 55px;
+            width: 25%;
+            color: darkslateblue;
+            background-color: floralwhite;
+            margin: 20px 20px;
+            color: #f1f1f1;
+            position: absolute;
+        }
+        
+        .sec-1 {
+            width: 100%;
+            margin-top: 25px;
+            margin-bottom: 35px;
+            float: left;
+        }
+        
+        .sec-1-member img {
+            float: left;
+            height: 15%;
+            width: 25%;
+            margin-bottom: 20px;
+            margin-right: 70px;
+            border-radius: 50%;
+            box-shadow: 3px 3px 3px 3px lightslategrey;
+        }
+        
+        .content {
+            flex-direction: column;
+            display: flex;
+            margin-top: 6px;
+            margin-bottom: 4px;
+            justify-content: center;
+            align-items: center;
+            clear: both;
+        }
+        
+        .sec-2 {
+            display: flex;
+            flex-direction: row;
+            height: 92vh;
+            width: 98vw;
+            margin-top: 35px;
+            margin-bottom: 10px;
+        }
+        
+        .left {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+            width: 50%;
+            font-size: 30px;
+            color: black;
+            background-color: rgb(219, 192, 182);
+            border-radius: 11px;
+            float: left;
+            overflow: hidden;
+            margin-left: 6px;
+        }
+        
+        .left p {
+            margin-left: 8px;
+        }
+        
+        .left h2 {
+            margin-bottom: 10px;
+            margin-left: 5px;
+        }
+        
+        .right {
+            display: flex;
+            float: right;
+            width: 45%;
+            flex-direction: column;
+            height: 500px;
+        }
+        
+        .box img {
+            justify-content: center;
+            align-items: center;
+            margin: 15px;
+            display: flex;
+            width: 100%;
+            height: 26vh;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 3px;
+        }
+        
+        .sec-3 {
+            margin-top: 20px;
+            float: left;
+            overflow: hidden;
+            margin-bottom: 30px;
+            width: 95vw;
+        }
+        
+        .technology-box {
+            padding: 10px;
+            display: block;
+            width: 30%;
+            box-shadow: 3px 3px 3px 3px lightslategrey;
+            background-color: lightyellow;
+            border-radius: 15px;
+            margin: 50px;
+            float: left;
+        }
+        
+        .technology-box-img img {
+            box-shadow: 3px 3px 3px 3px lightslategray;
+            width: 100%;
+            height: 20vh;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .technology-box-title h3 {
+            margin-top: 6px;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        
+        .technology-box-content p {
+            padding: 10px;
+            text-align: center;
+            display: block;
+            overflow: hidden;
+            font-size: 20px;
+        }
+        
+        .technology-box-link li {
+            padding: 3px 4px 3px 4px;
+            display: block;
+            background-color: salmon;
+            text-align: center;
+            border-radius: 10px;
+        }
+        
+        .technology-box-link li a {
+            text-align: center;
+            display: block;
+            font-weight: bold;
+            padding: 6px;
+            text-decoration: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: snow;
+        }
+        
+        .technology-box-link li a:hover {
+            background-color: darkseagreen;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 1s;
+            color: black;
+        }
+        
+        .technology-box:hover {
+            color: whitesmoke;
+            background-color: black;
+            transition: 2s;
+        }
+        
+        .sec-4 {
+            width: 100%;
+            height: 75px;
+            margin-bottom: 0px;
+            margin-top: 30px;
+            bottom: 0;
+            background-color: tan;
+        }
+        
+        .sec-4 p {
+            font-style: italic;
+            text-align: center;
+            list-style: none;
+            margin-top: 0.9vh;
+        }
+        
+        .sec-4 li a {
+            text-decoration: none;
+            font-style: 20px;
+            color: green;
+        }
+        
+        .sec-4 li a:hover {
+            color: purple;
+            font-variant-caps: unicase;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+        @media (min-width:826px) and (max-width:1207px) {
+            .header .m li a {
+                display: block;
+                text-decoration: none;
+                color: black;
+                padding: 6px 15px;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            .menu li a:hover {
+                color: tomato;
+                background-color: whitesmoke;
+                height: 11vh;
+            }
+            .banner {
+                width: 100%;
+                margin-top: 35px;
+                height: 80vh;
+                margin-bottom: 20px;
+                display: flex;
+            }
+            .banner img {
+                height: 80vh;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 13px;
+            }
+            .banner h2 {
+                margin: 20px 20px;
+                font-size: 48px;
+                color: black;
+                background: white;
+                color: #f1f1f1;
+                width: 30%;
+                position: absolute;
+            }
+            .sec-1 {
+                float: left;
+                width: 100%;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            .sec-1-member img {
+                border-radius: 50%;
+                float: left;
+                box-shadow: 3px 3px 3px 3px lightslategray;
+                height: 10%;
+                width: 17%;
+                margin-right: 61px;
+                margin-bottom: 15px;
+            }
+            .left h2 {
+                margin-bottom: 8px;
+                margin-left: 6px;
+                font-size: 35px;
+                margin-top: 5px;
+            }
+            .left p {
+                margin-left: 8px;
+                font-size: 25px;
+            }
+            .tech-box {
+                display: block;
+                width: 30%;
+                box-shadow: 3px 3px 3px 3px lightslategray;
+                padding: 10px;
+                background-color: white;
+                border-radius: 15px;
+                float: left;
+                margin: 50px;
+            }
+        }
+        
+        @media (max-width:827px) {
+            .show-button,
+            .hide-button {
+                display: block;
+            }
+            .m {
+                position: fixed;
+                top: 0;
+                right: -250%;
+                width: 55%;
+                height: 100%;
+                background-color: beige;
+                text-align: center;
+                line-height: normal;
+                transition: 1s;
+                margin-right: 20px;
+            }
+            .m li {
+                display: block;
+                padding: 10px;
+                border-bottom: 1px grey;
+            }
+            .m li a {
+                display: block;
+                text-decoration: none;
+                color: black;
+                font-size: 30px;
+                padding-left: 80px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                transition: 0.4s;
+                ;
+            }
+            .hide-button {
+                position: absolute;
+                right: 30px;
+                top: 18px;
+            }
+            #check:checked~.m {
+                right: 0%;
+            }
+            .banner {
+                width: 100%;
+                margin-top: 35px;
+                height: 60vh;
+                margin-bottom: 20px;
+                display: flex;
+            }
+            .banner img {
+                height: 60vh;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 13px;
+            }
+            .banner h2 {
+                margin: 20px 20px;
+                font-size: 38px;
+                color: black;
+                background: white;
+                color: #f1f1f1;
+                width: 28%;
+                position: absolute;
+            }
+            .sec-1-member img {
+                border-radius: 50%;
+                float: left;
+                box-shadow: 3px 3px 3px 3px lightslategray;
+                height: 25%;
+                width: 35%;
+                margin-left: 50px;
+                margin-right: 41px;
+                margin-bottom: 20px;
+            }
+            .sec-2 {
+                display: flex;
+                flex-direction: column;
+                height: 700px;
+                margin-top: 20px;
+                margin-bottom: 10px;
+                width: 98vw;
+            }
+            .left {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+                width: 95vw;
+                font-size: 20px;
+                color: black;
+                background-color: lightpink;
+                border-radius: 9px;
+                margin-left: 6px;
+                margin-bottom: 10px;
+                border: 1px solid darksalmon;
+            }
+            .box img {
+                margin: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 150px;
+                width: 95vw;
+                border-radius: 2px;
+                border: 1px solid blue;
+            }
+            .tech-box {
+                display: block;
+                width: 35%;
+                box-shadow: 3px 3px 3px 3px lightslategray;
+                padding: 10px;
+                background-color: white;
+                border-radius: 15px;
+                float: left;
+                margin: 50px;
+            }
+        }
+        
+        @media (max-width:680px) {
+            .m {
+                position: fixed;
+                top: 0;
+                right: -250%;
+                width: 45%;
+                height: 90%;
+                background-color: gray;
+                text-align: center;
+                line-height: normal;
+                transition: 1s;
+            }
+            .m li {
+                display: block;
+                padding: 8px;
+                border-bottom: 1px white solid;
+            }
+            .m li a {
+                display: block;
+                text-decoration: none;
+                padding: 3px 10px;
+                font-size: 20px;
+                color: black;
+                font-weight: bold;
+            }
+            .banner h2 {
+                margin: 20px 20px;
+                font-size: 28px;
+                color: #f1f1f1;
+                position: absolute;
+            }
+            .sec-1-member img {
+                border-radius: 50%;
+                display: flex;
+                flex-direction: column;
+                box-shadow: 3px 3px 3px 3px lightslategray;
+                height: 25%;
+                width: 55%;
+            }
+            .technology-box {
+                display: block;
+                width: 55%;
+                box-shadow: 3px 3px 3px 3px lightslategray;
+                padding: 10px;
+                background-color: white;
+                border-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                margin: 50px;
+            }
+        }
+        
+        @media (min-width:1208px) and (max-width:1464px) {
+            .sec-1-member img {
+                border-radius: 50%;
+                float: left;
+                box-shadow: 3px 3px 3px 3px lightslategray;
+                height: 10%;
+                width: 17%;
+                margin-right: 61px;
+                margin-bottom: 15px;
+            }
+            .technology-box {
+                display: block;
+                width: 16%;
+                box-shadow: 3px 3px 3px 3px lightslategray;
+                padding: 15px;
+                background-color: white;
+                border-radius: 15px;
+                float: left;
+                margin: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="header">
+            <input type="checkbox" id="check">
+            <label for="check" class="show-button">
+                <i class="fa fa-bars"></i>
+            </label>
+            <ul class="m">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#team">TEAM</a></li>
+                <li><a href="#technologies">TECHNOLOGIES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                <label for="check" class="hide-button">
+                    <i class="fa fa-bars"></i>
+                </label>
+            </ul>
+        </div>
+        <div class="banner" id="home">
+            <img src="../img/b.jpg">
+            <h2>Practical-9</h2>
+        </div>
+        <div class="content" id="team">
+            <h1>Team Members</h1>
+        </div>
+        <div class="sec-1">
+            <div class="sec-1-member" style="border-radius: 50%;margin-left: 11px;">
+                <img src="../img/face1.jpg">
+            </div>
+            <div class="sec-1-member" style="border-radius: 50%;">
+                <img src="../img/face2.jpg">
+            </div>
+            <div class="sec-1-member" style="border-radius: 50%;">
+                <img src="../img/face3.jpg">
+            </div>
+            <div class="sec-1-member" style="border-radius: 50%;">
+                <img src="../img/face4.jpg">
+            </div>
+        </div>
+        <div class="content" id="about">
+            <h1>About Us</h1>
+        </div>
+        <div class="sec-2">
+            <div class="left">
+                <dl>
+                    <dd>
+                        <h2>About Project</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quo amet quisquam animi officia voluptates, ducimus sequi. Eum soluta, quis impedit nam ea accusamus eos praesentium doloribus dolorum suscipit quo fugit iusto ipsum pariatur, dolores cupiditate
+                            quam quos sit facilis atque. Laborum rerum voluptas incidunt, nesciunt corrupti accusantium excepturi earum facilis rem esse laboriosam porro, hic error dolorem consectetur nam, quaerat voluptate reprehenderit. Officia suscipit,
+                            laborum laudantium quod at illum sit, facilis ducimus dolores a labore voluptates quidem a at, commodi rem officiis enim tempore Rerum.
+                        </p>
+                    </dd>
+                </dl>
+            </div>
+            <div class="right">
+                <div class="box">
+                    <img src="../img/p1.jpg">
+                </div>
+                <div class="box">
+                    <img src="../img/p2.jpeg">
+                </div>
+                <div class="box">
+                    <img src="../img/p3.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="content" id="technologies">
+            <h1>Technologies</h1>
+        </div>
+        <div class="sec-3">
+            <div class="technology-box">
+                <div class="technology-box-img">
+                    <img src="../img/html.jpg">
+                </div>
+                <div class="technology-box-title">
+                    <h3>Introduction To HTML</h3>
+                </div>
+                <div class="technology-box-content">
+                    <p>
+                        HTML stands for Hyper Text Markup Language. It is used to design web pages using markup language. HTML is the combination of Hypertext and Markup language...
+                    </p>
+                    <div class="technology-box-link">
+                        <li><a href="../practicals/HTML.html">Read More</a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+            <div class="technology-box">
+                <div class="technology-box-img">
+                    <img src="../img/CSS.jpg">
+                </div>
+                <div class="technology-box-title">
+                    <h3>Introduction to CSS</h3>
+                </div>
+                <div class="technology-box-content">
+                    <p>
+                        Cascading Style Sheets, fondly referred to as CSS, is a simply designed language intended to simplify the process of making web pages presentable. CSS allows you...
+                    </p>
+                    <div class="technology-box-link">
+                        <li><a href="../practicals/Css.html">Read More</a></li>
+                    </div>
+                </div>
+            </div>
+            <div class="technology-box">
+                <div class="technology-box-img">
+                    <img src="../img/JS.jpg">
+                </div>
+                <div class="technology-box-title">
+                    <h3>Introduction to JavaScript</h3>
+                </div>
+                <div class="technology-box-content">
+                    <p>
+                        JavaScript is a lightweight, cross-platform and interpreted scripting language. It is well-known for the development of web pages, many non-browser...
+                    </p>
+                    <div class="technology-box-link">
+                        <li>
+                            <a href="../practicals/JS.html"></a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+            <div class="technology-box">
+                <div class="technology-box-img">
+                    <img src="../img/BootStrap4.jpg">
+                </div>
+                <div class="technology-box-title">
+                    <h3>Introduction to BootStrap4</h3>
+                </div>
+                <div class="technology-box-content">
+                    <p>
+                        Bootstrap is a free and open-source tool collection for creating responsive websites and web applications. It is the most popular HTML, CSS, and JavaScript...
+                    </p>
+                    <div class="technology-box-link">
+                        <li>
+                            <a href="../practicals/BS.html"></a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content" id="contact">
+            <h2>Contact</h2>
+        </div>
+        <div class="sec-4">
+            <p>
+                <br><span style="font-size: 25px;">Made by <span style="color:darkmagenta">
+                        &copy Astha Kharya</span>
+                </span>
+            </p>
+            <li><a href="#">Back To Top</a></li>
+        </div>
+    </div>
+</body>
+
+</html>

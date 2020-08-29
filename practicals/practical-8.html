@@ -165,11 +165,6 @@
             font-weight: bold;
         }
         
-        h1 {
-            margin-bottom: 6px;
-            margin-left: 4px;
-        }
-        
         .technology {
             display: block;
             width: 23%;
@@ -213,35 +208,77 @@
         .technology li a:hover {
             background-color: darkseagreen;
             transition: 1s;
-            border-radius: 5px;
+            border-radius: 7px;
             color: whitesmoke;
             cursor: pointer;
         }
         
-        .footer {
-            background-color: lightblue;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            height: 110px;
-            width: 98%;
+        .technology:hover {
+            background-color: black;
+            color: white;
+            transition: 2s
         }
         
-        .t {
-            font-size: 30px;
+        .technology-box {
+            display: flex;
+            flex-direction: row;
+            height: 68vh;
+            width: 100%;
+        }
+        
+        h1 {
             text-align: center;
+            margin-top: 80px;
+            margin-bottom: 50px;
+            font-size: 40px;
+        }
+        
+        .footer {
+            height: 76px;
+            width: 100%;
+            bottom: 0;
+            background-color: lightseagreen;
+            margin-bottom: 0;
+        }
+        
+        .footer li {
+            font-style: italic;
+            text-align: center;
+            list-style: none;
+            margin-top: 0.9vh;
+        }
+        
+        .footer li a {
+            text-decoration: none;
+            font-size: 20px;
+            color: greenyellow;
+        }
+        
+        .footer li a:hover {
+            color: indigo;
+            font-variant-caps: unicase;
+            font-size: 25px;
             font-weight: bold;
         }
         
-        .t a {
-            text-decoration: none;
-            font-size: 25px;
+        .footer p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: italic;
+            font-weight: lighter;
+            font-size: 20px;
+            margin-top: 0;
+            text-align: center;
         }
         
-        .t a:hover {
-            color: goldenrod;
-            text-decoration: underline;
-            font-family: cursive;
+        .desc {
+            width: 100%;
+            font-variant: small-caps;
+        }
+        
+        .space {
+            height: 12vh
         }
     </style>
 </head>
@@ -299,51 +336,64 @@
                 </div>
             </div>
         </div>
-        <h2>
-            <a name="technology"></a>Technologies</h2>
-        <div class="technology">
-            <img src="../img/html.jpg" alt="Norway" style="width: 100%;">
-            <h3>Introduction To HTML</h3>
-            <p>HTML stands for Hyper Text Markup Language. It is used to design web pages using markup language. HTML is the combination of Hypertext and Markup language... </p>
-            <li>
-                <a href="../practicals/HTML.html">Read More</a>
-            </li>
-        </div>
-        <div class="technology">
-            <img src="../img/CSS.jpg">
-            <h3>Introduction To CSS</h3>
-            <p>Cascading Style Sheets, fondly referred to as CSS, is a simply designed language intended to simplify the process of making web pages presentable. CSS allows you to apply styles to web pages...</p>
-            <li>
-                <a href="../practicals/Css.html">Read More</a>
-            </li>
-        </div>
-        <div class="technology">
-            <img src="../img/JS.jpg">
-            <h3>Introduction To JavaScript</h3>
-            <p>JavaScript is a lightweight, cross-platform and interpreted scripting language. It is well-known for the development of web pages, many non-browser environments also use it. JavaScript can be used for...</p>
-            <li>
-                <a href="../practicals/JS.html">Read More</a>
-            </li>
-        </div>
-        <div class="technology">
-            <img src="../img/BootStrap4.jpg">
-            <h3>Introduction To Bootstrap</h3>
-            <p>Bootstrap is a free and open-source tool collection for creating responsive websites and web applications. It is the most popular HTML, CSS, and JavaScript framework for developing responsive...</p>
-            <li>
-                <a href="../practicals/BS.html">Read More</a>
-            </li>
-        </div>
-
-
-        <div class="footer" id="Contact">
-            <h1>Contact Us</h1>
-            <div class="t"> Website Template for Practical-8
-                <br><span style="font-size: 25px;">Made by <span style="color: darkmagenta">
-                    &copy Astha Kharya</span>
-                </span>
-                <br><a href="#Home">Move to top</a>
+        <div class="space" id="technology"></div>
+        <h2>Technologies</h2>
+        <div class="technology-box">
+            <div class="technology">
+                <img src="../img/html.jpg" alt="Norway" style="width: 100%;">
+                <div class="desc">
+                    <h3>Introduction To HTML</h3>
+                    <p>HTML stands for Hyper Text Markup Language. It is used to design web pages using markup language. HTML is the combination of Hypertext and Markup language... </p>
+                    <li>
+                        <a href="../practicals/HTML.html">Read More</a>
+                    </li>
+                </div>
+            </div>
+            <div class="technology">
+                <img src="../img/CSS.jpg">
+                <div class="desc">
+                    <h3>Introduction To CSS</h3>
+                    <p>Cascading Style Sheets, fondly referred to as CSS, is a simply designed language intended to simplify the process of making web pages presentable. CSS allows you to apply styles to web pages...</p>
+                    <li>
+                        <a href="../practicals/Css.html">Read More</a>
+                    </li>
+                </div>
+            </div>
+            <div class="technology">
+                <img src="../img/JS.jpg">
+                <div class="desc">
+                    <h3>Introduction To JavaScript</h3>
+                    <p>JavaScript is a lightweight, cross-platform and interpreted scripting language. It is well-known for the development of web pages, many non-browser environments also use it. JavaScript can be used for...</p>
+                    <li>
+                        <a href="../practicals/JS.html">Read More</a>
+                    </li>
+                </div>
+            </div>
+            <div class="technology">
+                <img src="../img/BootStrap4.jpg">
+                <div class="desc">
+                    <h3>Introduction To Bootstrap</h3>
+                    <p>Bootstrap is a free and open-source tool collection for creating responsive websites and web applications. It is the most popular HTML, CSS, and JavaScript framework for developing responsive...</p>
+                    <li>
+                        <a href="../practicals/BS.html">Read More</a>
+                    </li>
+                </div>
             </div>
         </div>
+
+        <div class="space" id="contact"></div>
+        <h2>Contact</h2>
+        <div class="footer">
+            <p>
+                <br><span style="font-size: 25px;">Made by <span style="color:darkmagenta">
+                    &copy Astha Kharya</span>
+                </span>
+            </p>
+            <li><a href="#">Back To Top</a></li>
+        </div>
+
+
+
     </div>
 
 </body>

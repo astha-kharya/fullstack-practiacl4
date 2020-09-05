@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Practical-10</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 250px;
+        }
+        
+        .c {
+            margin: auto;
+            width: 100%;
+        }
+        
+        .show-button,
+        .hide-button {
+            color: beige;
+            dispaly: none;
+            font-size: 35px;
+            line-height: 90px;
+        }
+        
+        .show-button {
+            float: right;
+        }
+        
+        #ch {
+            z-index: -2;
+            visibility: hidden;
+            position: absolute;
+        }
+        
+        body {
+            background-color: grey;
+            margin: 15px;
+        }
+        
+        .header {
+            top: 0;
+            height: 95px;
+            width: 100%;
+            position: sticky;
+            background-color: black;
+        }
+        
+        .navbar {
+            float: right;
+            padding: 0 25px;
+            list-style: none;
+        }
+        
+        .navbar li {
+            line-height: 85px;
+            display: inline-block;
+        }
+        
+        .navbar li a {
+            color: beige;
+            font-size: 30px;
+            padding: 0 25px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 3px;
+        }
+        
+        .navbar li a:hover {
+            transition: 1s;
+            color: green;
+        }
+        
+        .side-bar {
+            top: 65px;
+            height: 100%;
+            width: 35%;
+            position: fixed;
+            margin-top: 35px;
+            transition: 1s;
+            margin-left: 12px;
+            left: -125%;
+            background-color: black;
+        }
+        
+        .side-bar ul {
+            list-style: none;
+        }
+        
+        .side-bar ul li {
+            border-bottom: 3px solid red;
+        }
+        
+        .side-bar ul li a {
+            color: beige;
+            transition: 1s;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            align-items: center;
+            padding: 15px 25px;
+        }
+        
+        .side-bar ul li a:hover {
+            transition: 1s;
+            border-left: 10px solid beige;
+            background-color: grey;
+        }
+        
+        .social {
+            align-items: center;
+            justify-content: space-evenly;
+            display: flex;
+            font-size: 45px;
+            padding: 15px 25px;
+            border-bottom: 3px solid red;
+            border-top: 3px solid red;
+            margin-top: 250px;
+        }
+        
+        .social i {
+            color: beige;
+        }
+        
+        .social i:hover {
+            transform: scale(1.5);
+        }
+        
+        .show,
+        .hide {
+            color: beige;
+            position: fixed;
+            top: 35px;
+            left: 55px;
+            font-size: 45px;
+        }
+        
+        .hide {
+            opacity: 0;
+        }
+        
+        .hide:hover {
+            cursor: pointer;
+        }
+        
+        .show:hover {
+            cursor: pointer;
+        }
+        
+        #check {
+            z-index: -2;
+            visibility: hidden;
+            position: absolute;
+        }
+        
+        #check:checked~.side-bar {
+            left: 0;
+        }
+        
+        #check:checked~.show {
+            opacity: 0;
+        }
+        
+        #check:checked~.hide {
+            opacity: 1;
+        }
+        
+        @media(max-width: 760px) {
+            .side-bar {
+                width: 100%;
+            }
+        }
+        
+        .banner {
+            width: 100%;
+            height: 100vh;
+            margin-top: 14px;
+            margin-bottom: 14px;
+            display: flex;
+        }
+        
+        .img {
+            background-image: url('../img/background.jpg');
+            background-size: cover;
+            background-position: fixed;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+        }
+        
+        h1 {
+            color: black;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bolder;
+            margin-top: 75px;
+            margin-bottom: 50px;
+            font-size: 45px;
+        }
+        
+        .team {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+        
+        #pic img {
+            margin-right: 50px;
+            margin-left: 50px;
+            border-radius: 50%;
+            border: 2px solid black;
+        }
+        
+        #pic img:hover {
+            cursor: pointer;
+            box-shadow: 3px 3px 3px 3px lightseagreen;
+        }
+        
+        .about {
+            width: 100%;
+            height: 600px;
+            display: flex;
+            margin: 0px;
+            overflow: hidden;
+        }
+        
+        .left {
+            float: left;
+            width: 50%;
+            height: 550px;
+            background-color: lightseagreen;
+            text-align: justify;
+            color: beige;
+            padding: 30px;
+            font-size: 30px;
+            word-spacing: 3px;
+            overflow: scroll;
+        }
+        
+        .right {
+            width: 50%;
+            height: 600px;
+            display: flex;
+            float: right;
+            justify-content: space-around;
+        }
+        
+        .image {
+            height: 210px;
+            width: 100%;
+            float: right;
+            padding-left: 35px;
+            margin-bottom: 35px;
+        }
+        
+        #img1 {
+            border: 3px solid lightgreen;
+            height: 150px;
+            width: 100%;
+            margin-bottom: 10px;
+            background-image: url('../img/p1.jpg');
+            background-size: cover;
+        }
+        
+        #img2 {
+            border: 3px solid palevioletred;
+            height: 150px;
+            width: 100%;
+            margin-bottom: 10px;
+            background-image: url('../img/p2.jpeg');
+            background-size: cover;
+        }
+        
+        #img3 {
+            border: 3px solid lightgreen;
+            height: 150px;
+            width: 100%;
+            margin-bottom: 10px;
+            background-image: url('../img/p3.jpg');
+            background-size: cover;
+        }
+        
+        .maindiv {
+            justify-content: space-around;
+            display: flex;
+            display: block;
+            width: 100%;
+            float: left;
+            padding: 15px;
+            margin-bottom: 50px;
+        }
+        
+        .box {
+            background-color: purple;
+            box-shadow: 4px 4px 4px 4px grey;
+            float: left;
+            display: block;
+            width: 350px;
+            border-radius: 15px;
+            margin: 30px;
+            border: 3px solid goldenrod;
+            height: 100%;
+        }
+        
+        .box-img img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 15px;
+            border-radius: 10px;
+            width: 90%;
+            height: 150px;
+        }
+        
+        .title h2 {
+            margin-top: 30px;
+            text-align: center;
+            width: 100%;
+            color: beige;
+            font-weight: normal;
+        }
+        
+        .description-cards {
+            padding: 20px;
+            color: goldenrod;
+            text-align: justify;
+            line-height: 25px;
+            margin: 3px;
+        }
+        
+        .link {
+            background-color: beige;
+            color: purple;
+            margin-left: 10px;
+            margin-right: 10px;
+            height: 30px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        
+        .link a {
+            padding: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            display: block;
+        }
+        
+        .link a:hover {
+            background-color: yellowgreen;
+            cursor: pointer;
+            border-radius: 10px;
+            color: ivory;
+            font-weight: bolder;
+            transition: 1s;
+        }
+        
+        .footer {
+            background-color: lightskyblue;
+            text-align: center;
+            height: 110px;
+            width: 100%;
+        }
+        
+        .text {
+            font-size: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .text a {
+            text-decoration: none;
+            font-size: 25px;
+        }
+        
+        .text a:hover {
+            color: green;
+            text-decoration: underline;
+            font-family: cursive;
+        }
+        
+        @media (min-width: 913px) and (max-width: 1091px) {
+            .navbar li a {
+                font-size: 23px;
+            }
+            .about {
+                width: 100%;
+            }
+            #pic img {
+                border-radius: 50%;
+                height: 250px;
+                width: 250px;
+                float: left;
+                margin-bottom: 20px;
+                margin-left: 10%;
+            }
+        }
+        
+        @media(min-width: 780px) and (max-width: 930px) {
+            .navbar li {
+                display: block;
+                line-height: 60px;
+            }
+            .show-button {
+                display: block;
+                position: relative;
+                right: 15px;
+                top: 0;
+            }
+            .hide-button {
+                display: block;
+                position: absolute;
+                right: 15px;
+                top: 0;
+            }
+            .show-button,
+            .hide-button:hover {
+                cursor: pointer;
+            }
+            .navbar {
+                top: 0;
+                line-height: 90px;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+                height: 98%;
+                right: -100%;
+                margin: 0px 0px;
+                transition: 0.7s;
+                background-color: black;
+                position: fixed;
+            }
+            #ch:checked~.navbar {
+                display: block;
+                right: 0;
+            }
+            #ch:checked~.show-button {
+                opacity: 0;
+            }
+            .navbar li a {
+                display: block;
+                margin-bottom: 0px;
+                text-decoration: none;
+                color: beige;
+                letter-spacing: 2px;
+                font-size: 25px;
+                padding-bottom: 0px;
+                margin-top: 70px;
+            }
+            .navbar li a:hover {
+                color: black;
+                background-color: beige;
+                width: 100%;
+                font-family: unset;
+            }
+            .header {
+                width: 100%;
+                background-color: black;
+                top: 0;
+                position: sticky;
+                height: 90px;
+            }
+            .banner {
+                display: flex;
+                margin-bottom: 15px;
+                background-size: cover;
+                width: 100%;
+                height: 570px;
+            }
+            .description {
+                color: black;
+                font-size: 50px;
+                font-weight: bolder;
+                position: absolute;
+                ;
+                top: 20%;
+                left: 30px;
+            }
+            h1 {
+                text-align: center;
+                margin-bottom: 50px;
+                font-size: 40px;
+            }
+            .team {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+            }
+            #pic img {
+                border-radius: 50%;
+                height: 250px;
+                width: 250px;
+                float: left;
+                margin-bottom: 20px;
+                margin-left: 10%;
+            }
+            .about {
+                width: 100%;
+                height: 750px;
+                display: block;
+                margin: 0px;
+            }
+            .left {
+                width: 100%;
+                height: 220px;
+                margin-bottom: 20px;
+            }
+            .left p {
+                padding: 20px;
+                font-size: 20px;
+                word-spacing: 3px;
+                text-align: justify;
+            }
+            .right {
+                width: 100%;
+                height: 450px;
+            }
+            .image {
+                width: 100%;
+                margin-right: 13px;
+            }
+            #img1 {
+                border: 2px solid goldenrod;
+                height: 150px;
+                width: 100%;
+                margin-bottom: 10px;
+                background-image: url('../img/p1.jpg');
+                background-size: cover;
+            }
+            #img2 {
+                border: 2px solid palevioletred;
+                height: 150px;
+                width: 100%;
+                margin-bottom: 10px;
+                background-image: url('../img/p2.jpeg');
+                background-size: cover;
+            }
+            #img3 {
+                border: 2px solid goldenrod;
+                height: 150px;
+                width: 100%;
+                margin-bottom: 10px;
+                background-image: url('../img/p3.jpg');
+                background-size: cover;
+            }
+            .maindiv {
+                display: block;
+                align-items: center;
+            }
+            .box {
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+        }
+        
+        @media(min-width:0px) and (max-width: 800px) {
+            .navbar li {
+                display: block;
+                line-height: 60px;
+            }
+            .show-button {
+                display: block;
+                position: relative;
+                right: 15px;
+                top: 0;
+            }
+            .hide-buttton {
+                display: block;
+                position: absolute;
+                right: 15px;
+                top: 0;
+            }
+            .show-button,
+            .hide-button:hover {
+                cursor: pointer;
+            }
+            .navbar {
+                top: 0;
+                line-height: 90px;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+                height: 98%;
+                right: -100%;
+                margin: 0px 0px;
+                transition: 0.7s;
+                background-color: black;
+                position: fixed;
+            }
+            #ch:checked~.navbar {
+                display: block;
+                right: 0;
+            }
+            #ch:checked~.show-button {
+                opacity: 0;
+            }
+            .navbar li a {
+                display: block;
+                margin-bottom: 0px;
+                text-decoration: none;
+                color: beige;
+                letter-spacing: 2px;
+                font-size: 25px;
+                padding-bottom: 0px;
+                margin-top: 70px;
+            }
+            .navbar li a:hover {
+                color: black;
+                background-color: beige;
+                width: 100%;
+                font-family: unset;
+            }
+            .header {
+                width: 100%;
+                background-color: black;
+                top: 0;
+                position: sticky;
+                height: 90px;
+            }
+            .banner {
+                display: flex;
+                margin-bottom: 15px;
+                background-size: cover;
+                width: 100%;
+                height: 570px;
+            }
+            .description {
+                color: black;
+                font-size: 50px;
+                font-weight: bolder;
+                position: absolute;
+                ;
+                top: 20%;
+                left: 30px;
+            }
+            h1 {
+                text-align: center;
+                margin-bottom: 50px;
+                font-size: 40px;
+            }
+            .team {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+            }
+            #pic img {
+                border-radius: 50%;
+                height: 300px;
+                width: 300px;
+                float: left;
+                margin-bottom: 20px;
+                margin-left: 30%;
+            }
+            .about {
+                width: 100%;
+                height: 750px;
+                display: block;
+                margin: 0px;
+            }
+            .left {
+                width: 100%;
+                height: 220px;
+                margin-bottom: 20px;
+            }
+            .left p {
+                padding: 20px;
+                font-size: 20px;
+                word-spacing: 3px;
+                text-align: justify;
+            }
+            .right {
+                width: 100%;
+                height: 450px;
+            }
+            .image {
+                width: 100%;
+                margin-right: 13px;
+            }
+            #img1 {
+                border: 2px solid green;
+                height: 150px;
+                width: 100%;
+                margin-bottom: 10px;
+                background-image: url('../img/p1.jpg');
+                background-size: cover;
+            }
+            #img2 {
+                border: 2px solid palevioletred;
+                height: 150px;
+                width: 100%;
+                margin-bottom: 10px;
+                background-image: url('../img/p2.jpeg');
+                background-size: cover;
+            }
+            #img3 {
+                border: 2px solid green;
+                height: 150px;
+                width: 100%;
+                margin-bottom: 10px;
+                background-image: url('../img/p3.jpg');
+                background-size: cover;
+            }
+            .maindiv {
+                display: block;
+                align-items: center;
+            }
+            .box {
+                margin-left: 30%;
+                margin-right: 30%;
+            }
+        }
+        
+        @media screen and (max-width: 503px) {
+            .box {
+                margin-left: 45px;
+                margin-right: 0px;
+            }
+            #pic img {
+                height: 250px;
+                width: 250px;
+                float: left;
+                margin-left: 70px;
+                margin-right: 0px;
+            }
+            .footer {
+                width: 98%;
+                margin: 0px;
+            }
+        }
+    </style>
+</body>
+
+<body>
+    <div class="c">
+        <div class="header">
+            <input type="checkbox" id="ch" />
+            <label for="ch" class="show-button">
+                <i class="fa fa-bars"></i>
+            </label>
+            <ul class="navbar">
+
+                <li><a href="#Home">HOME</a></li>
+                <li><a href="#About">ABOUT US</a></li>
+                <li><a href="#Team">TEAM</a></li>
+                <li><a href="#Technologies">TECHNOLOGIES</a></li>
+                <li><a href="#Contact">CONTACT</a></li>
+                <label for="ch" class="hide-button">
+                    <i class="fa fa-times"></i>
+                </label>
+            </ul>
+        </div>
+        <input type="checkbox" name="" id="check" />
+
+        <label for="check" class="show">
+            <i class="fa fa-caret-right"></i></i>
+        </label>
+
+        <label for="check" class="hide">
+            <i class="fa fa-times"></i>
+        </label>
+
+        <div class="side-bar">
+            <ul>
+                <li><a href="../index.html"><i class ="fa fa-home"><span>&nbsp;&nbsp;&nbsp;Home Page</span></i></a></li>
+                <li><a href="#Technologies"><i class ="fa fa-tasks"><span>&nbsp;&nbsp;&nbsp;Services</span></i></a></li>
+                <li><a href="https://www.linkedin.com/feed/"><i class ="fa fa-linkedin-square"><span>&nbsp;&nbsp;&nbsp;Linkenden</span></i></a></li>
+                <li><a href="https://github.com/Ananya015"><i class ="fa fa-github"><span>&nbsp;&nbsp;&nbsp;github</span></i></a></li>
+                <li><a href="#Contact"><i class ="fa fa-id-card"><span>&nbsp;&nbsp;&nbsp;Contact</span></i></a></li>
+            </ul>
+            <div class="social">
+                <a href="https://www.facebook.com"><i class="fa fa-facebook-square"></i></a>
+                <a href="https://www.youtube.com/"><i class="fa fa-youtube-square"></i></a>
+                <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+            </div>
+        </div>
+        <a name="top"></a>
+        <div class="banner" id="Home">
+            <div class="image">
+                <!-- <div class="description">PRACTICAL-9</div> -->
+                <!-- <img src="../img/background.jpg" alt="laptop" width="100%" height="5%"> -->
+            </div>
+        </div>
+        <h1>Team Members</h1>
+        <div class="team" id="Team">
+            <div id="pic">
+                <img src="../img/face1.jpg">
+                <img src="../img/face2.jpg">
+                <img src="../img/face3.jpg">
+                <img src="../img/face4.jpg">
+            </div>
+        </div>
+        <h1>About Us</h1>
+        <div class="about" id="About">
+            <div class="left">
+                <h3 style="text-decoration: underline;" ;>About the Projects</h3><br>
+                <p>Welcome to the Fullstack Course!!<br> Front-end web development is everything involved in programming the user interface of a web application. Typically it refers to the <i><b></b>HyperText Markup
+                    Language</b></i>(HTML),
+                    <i><b>Cascading Style Sheets</b></i>(CSS) and
+                    <i><b>JavaScript</b></i> portion of website production as opposed to the database or server-site programming. It encompasses everything from building a simple page of HTML text to creating complex, responsive HTML5 design to be accessed
+                    via various differnt browers, devices and screen sizes klsej wrngjrwv wjgi vigvti vgtio43vyq;4 ctu2qpuc9qm34 cu 2th45iu 4uvtn98425vnut894n t5vtn4tu4nv tu54vnt45u45 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nihil
+                    aut omnis incidunt. Odio ut aliquam pariatur officia deleniti, nesciunt alias itaque molestiae omnis hic quas dolorem aspernatur officiis atque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi molestias porro unde esse
+                    odit rem possimus, dolorem quis natus nam iure velit recusandae minima quibusdam, molestiae perspiciatis, facere vero reprehenderit sint accusamus. Sequi libero, vero iste molestiae quaerat perferendis ad est possimus, quidem laborum
+                    id sed autem in omnis rem. Ad, autem quis esse molestiae maxime sed sint nesciunt iste quam cum ipsa non tenetur odit eum necessitatibus ipsum, alias impedit error labore consequatur blanditiis mollitia eius iusto. Dignissimos sit
+                    ad iste eos, assumenda libero labore obcaecati qui vitae tempore rem quae animi. Necessitatibus, dicta fugiat vero totam consequatur magnam!</p>
+            </div>
+            <div class="right">
+                <div class="img">
+                    <div id="img1">
+                        <h2>Project-1</h2>
+                    </div>
+                    <div id="img2">
+                        <h2>Project-2</h2>
+                    </div>
+                    <div id="img3">
+                        <h2>Project-3</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1>Technologies used</h1>
+        <div class="maindiv" id="Technologies">
+            <div class="box">
+                <div class="box-img">
+                    <img src="../img/html.jpg">
+                </div>
+                <div class="title">
+                    <h2>Introduction to HTML</h2>
+                </div>
+                <div class="description-cards">
+                    Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript. HTML elements
+                    are the building blocks of HTML pages.
+                </div>
+                <div class="link">
+                    <a href="HTML.html">Read More</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="../img/CSS.jpg">
+                </div>
+                <div class="title">
+                    <h2>Introduction to CSS</h2>
+                </div>
+                <div class="description-cards">
+                    Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.CSS is designed to enable the separation of presentation and content, including
+                    layout, colors, and fonts accessibility.
+                </div>
+                <div class="link">
+                    <a href="Css.html">Read More</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="../img/JS.jpg">
+                </div>
+                <div class="title">
+                    <h2>Introduction to JavaScript</h2>
+                </div>
+                <div class="description-cards">
+                    JavaScript often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation,
+                    and first-class functions...........
+                </div>
+                <div class="link">
+                    <a href="JS.html">Read More</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="../img/BootStrap4.jpg">
+                </div>
+                <div class="title">
+                    <h2>Introduction to Bootstrap</h2>
+                </div>
+                <div class="description-cards">
+                    Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and (optionally) JavaScript-based design templates kjshc skfjhjk kjefhaf jshckjscn for typography, forms, buttons, navigation,
+                    and other interface components............
+                </div>
+                <div class="link">
+                    <a href="BS.html">Read More</a>
+                </div>
+            </div>
+        </div>
+        <h1>Contact Us</h1>
+        <div class="footer" id="Contact">
+            <div class="text"> Website Template for Practical-10
+                <br><span style="font-size: 25px;">Made by <span style="color: rgb(252, 9, 9);">&copy Ananya Jain</span>
+                </span>
+                <br><a href="#Home">Move to top</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

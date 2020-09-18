@@ -78,3 +78,254 @@ h1 {
     justify-content: space-around;
     align-items: center;
 }
+
+.template-1 .button-section-1 input {
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    border: none;
+    font-size: 15px;
+    color: white;
+    background: lightsalmon;
+}
+
+.template-1 .button-section-1 label {
+    color: gray;
+}
+
+.template-1 .button-section-1 label a {
+    color: black;
+    text-decoration: none;
+}
+
+.template-2 {
+    width: 35%;
+    box-shadow: 1px 1px 1px 1px grey;
+    border-radius: 6px;
+    background-color: whitesmoke;
+}
+
+.template-2 .header-2 {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.template-2 .header-2 h2 {
+    color: lightpink;
+    margin: 25px;
+    font-size: 35px;
+}
+
+.template-2 .input-section-2 {
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.template-2 .input-section-2 div {
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.template-2 .input-section-2 input {
+    background: transparent;
+    width: 100%;
+    font-size: 25px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.template-2 .input-section-2 .forget {
+    display: block;
+}
+
+.template-2 .input-section-2 .forget input {
+    margin: 0;
+    padding: 0;
+}
+
+.template-2 .button-section-2 {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.template-2 .button-section-2 input {
+    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    border: none;
+    font-size: 15px;
+    color: white;
+    background: lightpink;
+}
+
+.template-2 .button-section-2 label {
+    color: gray;
+}
+
+.template-2 .button-section-2 label a {
+    color: black;
+    text-decoration: none;
+}
+
+.template-2 .icons {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-size: 25px;
+    background: black;
+    color: rgba(245, 245, 245, 0.97);
+}
+
+.template-2 .icons i {
+    margin: 10px;
+}
+
+.template-3 {
+    width: 35%;
+    border-radius: 6px;
+    box-shadow: 1px 1px 1px 1px grey;
+    background-color: lightgoldenrodyellow;
+}
+
+.template-3 .header-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+}
+
+.template-3 .header-3 h2 {
+    margin: 25px;
+    font-size: 35px;
+    color: lightskyblue;
+}
+
+.template-3 .input-section-3 {
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.template-3 .input-section-3 div {
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.template-3 .input-section-3 label {
+    color: rgb(0.183, 255);
+}
+
+.template-3 .input-section-3 input {
+    background: transparent;
+    width: 100%;
+    font-size: 25px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.template-3 .input-section-3 .forgot {
+    text-align: right;
+}
+
+.template-3 .button-section-3 {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-direction: column;
+}
+
+.template-3 .button-section-3 input {
+    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    border: none;
+    font-size: 15px;
+    color: white;
+    background: lightseagreen;
+}
+
+.template-3 .button-section-3 label {
+    color: gray;
+}
+
+.template-3 .button-section-3 label a {
+    color: black;
+    text-decoration: none;
+}
+
+.template-3 .icons {
+    font-size: 25px;
+    justify-content: center;
+    display: flex;
+    padding: 30px;
+    color: lightseagreen;
+}
+
+.template-3 .icons i {
+    margin: 10px;
+    box-shadow: 2px 2px 2px 2px grey;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media(max-width:850px) {
+    .container {
+        padding: 10px;
+        display: flex;
+        margin-top: 100px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .template-1 {
+        width: 80%;
+        margin: 30px;
+        border-radius: 6px;
+        box-shadow: 1px 1px 1px 1px grey;
+        background: rgba(235, 221, 222, 0.6);
+    }
+    .template-2 {
+        width: 80%;
+        margin: 30px;
+        box-shadow: 1px 1px 1px 1px grey;
+        border-radius: 6px;
+        background-color: whitesmoke;
+    }
+    .template-3 {
+        width: 80%;
+        margin: 30px;
+        border-radius: 6px;
+        box-shadow: 1px 1px 1px 1px grey;
+        background-color: lightgoldenrodyellow;
+    }
+}
+
+.template-1 .button-section-1 input:hover {
+    background-color: lightcoral;
+    transition: 0.5s;
+}
+
+.template-2 .button-section-2 input:hover {
+    background-color: blue;
+    transition: 0.5s;
+}
+
+i:hover {
+    color: pink;
+    transition: 0.5s;
+}

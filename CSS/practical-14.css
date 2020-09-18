@@ -5,13 +5,13 @@
 }
 
 body {
-    background: linear-gradient(90deg, white)0%, rgb(245, 222, 221)97%
+    background: linear-gradient(90deg, white 0%, rgba(241, 190, 169, 0.88) 0%, rgb(245, 222, 222) 97%);
 }
 
 .container {
     padding: 10px;
     display: flex;
-    margin-top: 75px;
+    margin-top: 70px;
     justify-content: space-around;
 }
 
@@ -20,15 +20,15 @@ h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     text-shadow: lightgray 1px;
-    margin: 25px;
+    margin: 20px;
     font-variant: small-caps;
     font-size: 55px;
     color: rgba(255, 245, 245, 0.979);
 }
 
 .template-1 {
-    width: 35%;
-    border-radius: 6px;
+    width: 30%;
+    border-radius: 5px;
     box-shadow: 1px 1px 1px 1px grey;
     background: rgba(235, 221, 222, 0.6);
 }
@@ -44,7 +44,7 @@ h1 {
 
 .template-1 .header-1 h2 {
     color: wheat;
-    margin: 25px;
+    margin: 20px;
     font-size: 35px;
 }
 
@@ -55,7 +55,7 @@ h1 {
 }
 
 .template-1 .header-1 .icons i {
-    margin: 6px;
+    margin: 5px;
 }
 
 .template-1 .input-section-1 {
@@ -101,9 +101,9 @@ h1 {
 }
 
 .template-2 {
-    width: 35%;
+    width: 30%;
     box-shadow: 1px 1px 1px 1px grey;
-    border-radius: 6px;
+    border-radius: 5px;
     background-color: whitesmoke;
 }
 
@@ -117,7 +117,7 @@ h1 {
 
 .template-2 .header-2 h2 {
     color: lightpink;
-    margin: 25px;
+    margin: 20px;
     font-size: 35px;
 }
 
@@ -191,8 +191,8 @@ h1 {
 }
 
 .template-3 {
-    width: 35%;
-    border-radius: 6px;
+    width: 30%;
+    border-radius: 5px;
     box-shadow: 1px 1px 1px 1px grey;
     background-color: lightgoldenrodyellow;
 }
@@ -206,7 +206,7 @@ h1 {
 }
 
 .template-3 .header-3 h2 {
-    margin: 25px;
+    margin: 20px;
     font-size: 35px;
     color: lightskyblue;
 }
@@ -295,7 +295,7 @@ h1 {
     .template-1 {
         width: 80%;
         margin: 30px;
-        border-radius: 6px;
+        border-radius: 5px;
         box-shadow: 1px 1px 1px 1px grey;
         background: rgba(235, 221, 222, 0.6);
     }
@@ -303,13 +303,13 @@ h1 {
         width: 80%;
         margin: 30px;
         box-shadow: 1px 1px 1px 1px grey;
-        border-radius: 6px;
+        border-radius: 5px;
         background-color: whitesmoke;
     }
     .template-3 {
         width: 80%;
         margin: 30px;
-        border-radius: 6px;
+        border-radius: 5px;
         box-shadow: 1px 1px 1px 1px grey;
         background-color: lightgoldenrodyellow;
     }

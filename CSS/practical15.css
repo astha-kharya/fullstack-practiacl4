@@ -9,13 +9,6 @@ body {
     height: 80vh;
 }
 
-#heading h1 {
-    font-size: 40px;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-}
-
 .button {
     font-size: 50px;
     padding-right: 40px;

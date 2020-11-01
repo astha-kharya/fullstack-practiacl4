@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: orange;
+}
+
+#container {
+    text-align: center;
+}
+
+#heading h1 {
+    line-height: 40vh;
+    font-size: 30px;
+}
+
+#counter {
+    justify-content: center;
+    display: flex;
+}
+
+#right button,
+#left button,
+#number {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 40px;
+    padding-left: 40px;
+    font-size: 40px;
+}
+
+#right button,
+#left button {
+    background-color: rgb(80, 130, 200);
+    border: none;
+    box-shadow: 2px 2px 2px 2px black;
+}
+
+#right button:hover,
+#left button:hover {
+    cursor: pointer;
+    border: none;
+    background-color: darkkhaki;
+    box-shadow: 2px 2px 2px 2px grey;
+}

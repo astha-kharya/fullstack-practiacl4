@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-15</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="heading">
+            <h1>Javascript Counter</h1>
+        </div>
+        <div id="counter">
+            <button id="left button" onclick="decrement()">-</button>
+            <div id="number">0</div>
+            <button id="right button" onclick="increment()">+</button>
+        </div>
+    </div>
+    <script>
+        var number = 0;
+        document.getElementById("left button").disabled = true;
+        document.getElementById("left button").style.backgroundColor = "rgb(70,70,150)";
+
+        function increment() {
+            document.getElementById("left button").disabled = false;
+            document.getElementById("left button").style.backgroundColor = "rgb(80,130,200)";
+            number++;
+            document.getElementById("number").innerHTML = number;
+        }
+
+        function decrement() {
+            if (number == 0) {
+                document.getElementById("left button").disabled = true;
+                document.getElementById("left button").style.backgroundColor = "rgb(70,70,150)";
+            } else {
+                number--;
+                document.getElementById(number).innerHTML = number;
+            }
+        }
+    </script>
+</body>
+
+</html>

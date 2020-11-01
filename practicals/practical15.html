@@ -39,6 +39,10 @@
                 number--;
                 document.getElementById(number).innerHTML = number;
             }
+            if (number == 0) {
+                document.getElementById("left button").disabled = true;
+                document.getElementById("left button").style.backgroundColor = "rgb(70,70,150)";
+            }
         }
     </script>
 </body>

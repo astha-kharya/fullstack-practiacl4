@@ -13,7 +13,7 @@ body {
 }
 
 #heading h1 {
-    line-height: 40vh;
+    line-height: 50vh;
     font-size: 30px;
 }
 
@@ -22,8 +22,8 @@ body {
     display: flex;
 }
 
-#right button,
 #left button,
+#right button,
 #number {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -32,8 +32,8 @@ body {
     font-size: 40px;
 }
 
-#right button,
-#left button {
+#left button,
+#right button {
     background-color: rgb(80, 130, 200);
     border: none;
     box-shadow: 2px 2px 2px 2px black;

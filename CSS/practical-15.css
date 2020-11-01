@@ -29,7 +29,7 @@ body {
     padding-bottom: 10px;
     padding-right: 40px;
     padding-left: 40px;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 #left button,
@@ -39,8 +39,8 @@ body {
     box-shadow: 2px 2px 2px 2px black;
 }
 
-#right button:hover,
-#left button:hover {
+#left button:hover,
+#right button:hover {
     cursor: pointer;
     border: none;
     background-color: darkkhaki;

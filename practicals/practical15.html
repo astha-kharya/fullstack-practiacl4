@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-15</title>
+    <link rel="stylesheet" href="../CSS/practical15.css" />
+</head>
+
+<body>
+    <div class="container">
+        <button id="left-button" class="button" onclick="decre()">-</button>
+        <div class="counter" id="count">0</div>
+        <button id="right-button" class="button" onclick="incre()">+</button>
+    </div>
+    <script>
+        var count = 0;
+        document.getElementById("left-button").disabled = true;
+        document.getElementById("left-button").style.backgroundColor =
+            "rgb(4,4,5,0.4)";
+
+        function incre() {
+            document.getElementById("left-button").disabled = false;
+            document.getElementById("left-button").style.backgroundColor =
+                "rgb(4,4,5,0.4)";
+            count++;
+            document.getElementById("count").innerHTML = count;
+        }
+
+        function decre() {
+            if (count === 0) {
+                document.getElementById("left-button").disabled = true;
+                document.getElementById("left-button").style.backgroundColor =
+                    "rgb(4,4,5,0.2)";
+            } else {
+                count--;
+                document.getElementById("count").innerHTML = count;
+            }
+            if (count === 0) {
+                document.getElementById("left-button").disabled = true;
+                document.getElementById("left-button").style.backgroundColor =
+                    "rgb(4,4,5,0.2)";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

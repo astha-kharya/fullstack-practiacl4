@@ -28,18 +28,14 @@ body {
 }
 
 .name {
-    color: darkslategrey;
+    color: yellow;
     margin: 5px;
-}
-
-.heart {
-    opacity: 0.6;
-    font-size: 8rem;
+    font-size: 20px;
 }
 
 #date {
     margin: 10px;
-    font-size: 25px;
+    font-size: 30px;
     color: darkorchid;
     text-shadow: 2px 2px black;
 }

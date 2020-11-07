@@ -1,5 +1,4 @@
 var greeting = document.getElementById('greet');
-var heart = document.getElementById('mood');
 var date = document.getElementById('date');
 var clock = document.getElementById('clock');
 const name = document.getElementById('Name');
@@ -13,4 +12,14 @@ function updateTime() {
     var min = time.getMinutes();
     var seconds = time.getSeconds();
     var AmPm = hours > 12 ? 'PM' : 'AM';
+    var hour = hours % 12 || 12;
+    var today = time.toDateString();
+    clock.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(seconds)}${AmPm}`;
+    date.innerHTML = `${today}`;
+    if (hours >= 20) {
+        document.body.style.backgroundImage = "url('../img/night.jpg')";
+        clock.style.color = "white";
+        greeting.style.color = "white";
+        greeting.innerHTML = 'GOOD NIGHT';
+    }
 }

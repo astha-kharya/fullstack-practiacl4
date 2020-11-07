@@ -58,7 +58,7 @@ function setName(e) {
 
 function getName() {
     if (localStorage.getItem('name') === null) {
-        name.innerHTML = '[ASTHA KHARYA]';
+        name.innerHTML = 'ASTHA KHARYA';
     } else {
         name.innerHTML = localStorage.getItem('name');
     }

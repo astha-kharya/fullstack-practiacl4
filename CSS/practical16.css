@@ -89,6 +89,6 @@ i {
 }
 
 .check {
-    opacity: 2;
+    opacity: 0;
     text-decoration: line-through;
 }

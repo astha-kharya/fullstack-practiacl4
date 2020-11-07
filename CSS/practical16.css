@@ -51,7 +51,7 @@ h1 {
 }
 
 .todo {
-    width: 300%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,7 +62,7 @@ h1 {
 
 .todo li {
     font-size: 30px;
-    color: darkmagenta;
+    color: darkturquoise;
     margin-left: 10px;
     flex: 1;
     list-style: none;

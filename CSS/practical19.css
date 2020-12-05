@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightslategray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: wheat;
+    border-radius: 10px;
+    position: absolute;
+    width: 360px;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.p-row {
+    display: flex;
+    position: relative;
+    width: 360px;
+    height: 40px;
+    align-items: center;
+    box-shadow: 0px -1px 5px -1px black;
+}
+
+.p-col {
+    text-align: center;
+    width: 120px;
+    font-weight: bolder;
+    z-index: 1;
+}
+
+#progress {
+    height: 100%;
+    width: 120px;
+    position: absolute;
+    background-color: skyblue;
+    transition: 0.4s;
+}
+
+#progress::after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    right: -20px;
+    top: 0;
+    border-left: 20px solid skyblue;
+}
+
+#form-1 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    left: 0px;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+h1 {
+    margin-top: 20px;
+    margin: 10px;
+    color: darkslategray;
+    font-size: 30px;
+}
+
+.btn {
+    height: 30px;
+    width: 100px;
+    margin: 10px;
+    background-color: skyblue;
+    color: wheat;
+    outline: none;
+    border: none;
+}
+
+.btn-box {
+    display: flex;
+    margin: 0px;
+}
+
+#form-1 input {
+    width: 60%;
+    height: 40px;
+    margin: 12px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+}
+
+#form-2 {
+    position: absolute;
+    left: 450px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+#form-2 input {
+    width: 60%;
+    height: 40px;
+    margin: 12px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+}
+
+#form-3 {
+    position: absolute;
+    left: 450px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+#form-3 input {
+    width: 60%;
+    height: 40px;
+    margin: 12px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+}

@@ -5,43 +5,43 @@
 }
 
 body {
-    background-color: lightslategray;
+    background-color: grey;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .container {
-    background: wheat;
+    width: 360px;
+    background: white;
+    height: 50vh;
     border-radius: 10px;
     position: absolute;
-    width: 360px;
-    height: 50vh;
     overflow: hidden;
 }
 
 .p-row {
-    display: flex;
-    position: relative;
     width: 360px;
     height: 40px;
-    align-items: center;
     box-shadow: 0px -1px 5px -1px black;
+    display: flex;
+    position: relative;
+    align-items: center;
 }
 
 .p-col {
-    text-align: center;
     width: 120px;
-    font-weight: bolder;
+    text-align: center;
     z-index: 1;
+    font-weight: bolder;
 }
 
 #progress {
-    height: 100%;
     width: 120px;
+    height: 100%;
     position: absolute;
-    background-color: skyblue;
+    background-color: rgb(20, 180, 220);
     transition: 0.4s;
 }
 
@@ -54,7 +54,7 @@ body {
     border-bottom: 20px solid transparent;
     right: -20px;
     top: 0px;
-    border-left: 20px solid skyblue;
+    border-left: 20px solid rgb(20, 180, 220);
 }
 
 #form-1 {
@@ -72,7 +72,7 @@ body {
 h1 {
     margin-top: 20px;
     margin: 10px;
-    color: darkslategray;
+    color: grey;
     font-size: 30px;
 }
 
@@ -80,8 +80,8 @@ h1 {
     height: 30px;
     width: 100px;
     margin: 10px;
-    background-color: skyblue;
-    color: wheat;
+    background-color: rgb(20, 180, 220);
+    color: white;
     outline: none;
     border: none;
 }

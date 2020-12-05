@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
@@ -47,13 +47,13 @@ body {
 
 #progress::after {
     content: "";
-    width: 0;
-    height: 0;
+    width: 0px;
+    height: 0px;
     position: absolute;
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
     right: -20px;
-    top: 0;
+    top: 0px;
     border-left: 20px solid skyblue;
 }
 

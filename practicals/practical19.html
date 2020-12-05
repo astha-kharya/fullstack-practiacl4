@@ -10,41 +10,54 @@
 
 <body>
     <div class="container">
-        <div class="p-row">
+        <!-- FORM1 -->
+        <form id="form1">
+            <h3>CREATE ACCOUNT</h3>
+            <input type="text" placeholder="Enter Your Email">
+            <input type="password" placeholder="Enter Your Password">
+            <input type="password" placeholder="Enter confirm password">
+
+            <div class="btn">
+                <button type="button" id="next1">Next</button>
+            </div>
+        </form>
+
+        <!-- form2 -->
+        <form id="form2">
+            <h3>SOCIAL LINKS</h3>
+            <input type="text" placeholder="Linkelin">
+            <input type="text" placeholder="Github">
+            <input type="text" placeholder="Facebook">
+
+            <div class="btn">
+                <button type="button" id="back1">Back</button>
+                <button type="button" id="next2">Next</button>
+            </div>
+        </form>
+
+        <!-- form3 -->
+        <form id="form3">
+            <h3>PERSONAL INFORMATION</h3>
+            <input type="text" placeholder="First name">
+            <input type="password" placeholder="Last name">
+            <input type="password" placeholder="Mobile number">
+
+            <div class="btn">
+                <button type="button" id="back2">Back</button>
+                <button type="button">Submit</button>
+            </div>
+        </form>
+
+        <!-- slidebar -->
+        <div class="step">
             <div id="progress"></div>
-            <div class="p-col">Step-1</div>
-            <div class="p-col">Step-2</div>
-            <div class="p-col">Step-3</div>
+            <div class="step1"> <small>Step-1</small></div>
+            <div class="step1"> <small>Step-2</small></div>
+            <div class="step1"> <small>Step-3</small></div>
         </div>
-        <div id="form-1">
-            <h1>Create Account</h1>
-            <input type="text" id="username" placeholder="Username" />
-            <input type="text" id="username" placeholder="Password" />
-            <input type="text" id="username" placeholder="Confirm Password" />
-            <button class="btn" id="btn-1">Next</button>
-        </div>
-        <div id="form-2">
-            <h1>Enter Social Links</h1>
-            <input type="text" id="username" placeholder="LinkedIn" />
-            <input type="text" id="username" placeholder="Gmail" />
-            <input type="text" id="username" placeholder="Facebook" />
-            <div class="btn-box">
-                <button class="btn" id="next-btn-2">Next</button>
-                <button class="btn" id="back-btn-2">Back</button>
-            </div>
-        </div>
-        <div class="form-3">
-            <h1>Enter OTP</h1>
-            <input type="text" id="username" placeholder="OTP" />
-            <input type="text" id="username" placeholder="Confirm OTP" />
-            <input type="text" id="username" placeholder="Enter Code" />
-            <div class="btn-box">
-                <button class="btn" id="next-btn-3">Next</button>
-                <button class="btn" id="back-btn-3">Back</button>
-            </div>
-        </div>
+
     </div>
+    <script src="../JavaScript/practical19.js"></script>
 </body>
-<script src="../JavaScript/practical19.js"></script>
 
 </html>
